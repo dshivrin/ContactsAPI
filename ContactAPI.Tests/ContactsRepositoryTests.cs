@@ -5,7 +5,6 @@ using EntityFrameworkCoreMock;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Moq;
-using System.Runtime.InteropServices;
 
 namespace ContactsAPI.Tests
 {

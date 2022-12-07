@@ -49,7 +49,7 @@ namespace ContactsAPI.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult<List<Contact>>> DeleteContact([FromBody] Contact request)
+        public async Task<ActionResult<Contact>> DeleteContact([FromBody] Contact request)
         {
             var result = await contactService.DeleteAsync(request);
             if (result is null || result.Id == 0) return StatusCode(StatusCodes.Status500InternalServerError, $"Could not delete contact {request.Id}");
