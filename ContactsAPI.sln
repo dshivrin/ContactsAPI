@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsAPI.Data", "Contact
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsAPI.Service", "ContactsAPI.Service\ContactsAPI.Service.csproj", "{12E4C30E-203D-4E19-A0D2-A39652ABBC45}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsAPI.Tests", "ContactAPI.tests\ContactsAPI.Tests.csproj", "{4212F4DC-145A-4A51-8991-900E3AFBFF09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{12E4C30E-203D-4E19-A0D2-A39652ABBC45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12E4C30E-203D-4E19-A0D2-A39652ABBC45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12E4C30E-203D-4E19-A0D2-A39652ABBC45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4212F4DC-145A-4A51-8991-900E3AFBFF09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4212F4DC-145A-4A51-8991-900E3AFBFF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4212F4DC-145A-4A51-8991-900E3AFBFF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4212F4DC-145A-4A51-8991-900E3AFBFF09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

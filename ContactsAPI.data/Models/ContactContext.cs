@@ -1,6 +1,7 @@
 ﻿using ContactsAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,19 +12,25 @@ namespace ContactsAPI.Data.Models
 {
     public partial class ContactContext : DbContext
     {
-        private readonly IConfiguration configuration;
+        //TEmorary removed due to errors in mock object DI
+        //private readonly IConfiguration configuration;
+        private readonly string connectionString = "Server=(LocalDb)\\cardcom;Database=Contacts;Trusted_Connection=True;TrustServerCertificate=True;";
 
-        public ContactContext(DbContextOptions<ContactContext> options, IConfiguration configuration)
-           : base(options)
+        //public ContactContext(DbContextOptions<ContactContext> options, IConfiguration configuration)
+        //   : base(options)
+        //{
+        //    this.configuration = configuration;
+        //}
+
+        public ContactContext(DbContextOptions<ContactContext> options) : base(options)
         {
-            this.configuration = configuration;
         }
         public virtual DbSet<Contact> Contact { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            var connectionString = configuration.GetConnectionString("contacts");
+            //var connectionString = configuration.GetConnectionString("contacts");
             optionsBuilder.UseSqlServer(connectionString);
         }
 

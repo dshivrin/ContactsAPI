@@ -40,7 +40,7 @@ namespace ContactsAPI.Data.Repositories
             }
             try
             {
-                if (_contactsContext.Entry(entity).State == EntityState.Detached)
+                if (_contactsContext.Entry(entity) != null && _contactsContext.Entry(entity).State == EntityState.Detached)
                 {
                     _contactsContext.Attach(entity);
                 }

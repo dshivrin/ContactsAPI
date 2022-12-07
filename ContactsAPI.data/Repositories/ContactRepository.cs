@@ -37,6 +37,17 @@ namespace ContactsAPI.Data.Repositories
             return result;
         }
 
-      
+        public async Task<Contact> GetContactByEmailAsync(Contact contact)
+        {
+            //var result = contactContext.Contact.Where(c => c.Email == email).FirstOrDefaultAsync();
+            var result = await contactContext.Contact.FirstAsync(c => c.Email == contact.Email);
+            if (result == null)
+            {
+                throw new Exception($"{nameof(GetContactByIDAsync)} Couldn't retrieve entities for contact {contact}");
+            }
+            return result;
+
+        }
+
     }
 }
