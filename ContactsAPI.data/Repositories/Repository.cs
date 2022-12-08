@@ -28,7 +28,7 @@ namespace ContactsAPI.Data.Repositories
             }
             catch (Exception ex)
             {
-                throw new Exception($"Couldn't retrieve entities: {ex.Message}");
+                throw new Exception($"Couldn't add entity: {ex.Message}");
             }
         }
 
