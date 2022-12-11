@@ -14,10 +14,7 @@ namespace ContactsAPI.Data.Repositories
 
         public async Task<TEntity> AddAsync(TEntity entity)
         {
-            if (entity == null)
-            {
-                throw new ArgumentNullException($"{nameof(AddAsync)} entity must not be null");
-            }
+            ArgumentNullException.ThrowIfNull(entity);
 
             try
             {
@@ -34,10 +31,8 @@ namespace ContactsAPI.Data.Repositories
 
         public async Task<TEntity> DeleteAsync(TEntity entity)
         {
-            if (entity == null)
-            {
-                throw new ArgumentNullException($"{nameof(DeleteAsync)} entity must not be null");
-            }
+            ArgumentNullException.ThrowIfNull(entity);
+
             try
             {
                 if (_contactsContext.Entry(entity) != null && _contactsContext.Entry(entity).State == EntityState.Detached)
@@ -71,10 +66,7 @@ namespace ContactsAPI.Data.Repositories
 
         public async Task<TEntity> UpdateAsync(TEntity entity)
         {
-            if (entity == null)
-            {
-                throw new ArgumentNullException($"{nameof(UpdateAsync)} entity must not be null");
-            }
+            ArgumentNullException.ThrowIfNull(entity);
 
             try
             {

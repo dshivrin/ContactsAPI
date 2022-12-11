@@ -39,6 +39,7 @@ namespace ContactsAPI.Data.Repositories
 
         public async Task<Contact> GetContactByEmailAsync(Contact contact)
         {
+            ArgumentNullException.ThrowIfNull(contact);
             //var result = contactContext.Contact.Where(c => c.Email == email).FirstOrDefaultAsync();
             var result = await contactContext.Contact.FirstAsync(c => c.Email == contact.Email);
             if (result == null)
